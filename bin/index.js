@@ -29,7 +29,7 @@ const main = async () => {
       const models = [];
       for (const _model of modelsPath) {
         if (_model.indexOf('.js') != -1 && !(_model === "index.js" && program.ignoreIndex)){
-          const model = require(path.join(modelDirectory, _model));
+          const model = require(path.join(modelDirectory, _model)).Model;
           models.push(model);
         }
       }
